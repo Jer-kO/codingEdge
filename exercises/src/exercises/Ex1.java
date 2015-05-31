@@ -23,7 +23,7 @@ public class Ex1 {
 	 * Input: "Hello World"
 	 * Output: "ello World"
 	 * */
-	public static String Question2(String str1, String str2) {
-		return str1 + " " + str2;
+	public static String Question2(String str1) {
+		return str1.substring(1, str1.length());
 	}
 }
