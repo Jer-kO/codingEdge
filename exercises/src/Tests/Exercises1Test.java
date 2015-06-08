@@ -14,25 +14,51 @@ import java.util.UUID;
 public class Exercises1Test {
 	
 	Ex1 ex1;
-//	static String str1;
-//	static String str2;
 	
     @BeforeClass
     public static void setUpExercises() throws Exception {
         // Code executed before the first test method
-//    	str1 = UUID.randomUUID().toString();
-//    	str2 = UUID.randomUUID().toString();
     }
 
 	@Test
-	public void Question1Test() {
-		assertEquals(Ex1.Question1("hello", "world"), "hello world");
-//		assertEquals(Ex1.Question1(str1, str2), str1 + " " + str2);
+	public void stringQ1Test() {
+		assertEquals(Ex1.stringQ1("hello", "world"), "hello world");
+		assertEquals(Ex1.stringQ1("", ""), " ");
 	}
 	
 	@Test
-	public void Question2Test() {
-		assertEquals(Ex1.Question2("hello"), "ello");
+	public void stringQ2Test() {
+		assertEquals(Ex1.stringQ2("hello"), "ello");
 	}
-
+	
+	@Test
+	public void booleanQ1Test() {
+		assertEquals(Ex1.booleanQ1(true), false);
+		assertEquals(Ex1.booleanQ1(false), true);
+	}
+	
+	@Test
+	public void booleanQ2Test() {
+		assertEquals(Ex1.booleanQ2(true, true), true);
+		assertEquals(Ex1.booleanQ2(true, false), false);
+		assertEquals(Ex1.booleanQ2(false, true), false);
+		assertEquals(Ex1.booleanQ2(false, false), false);
+	}
+	
+	@Test
+	public void booleanQ3Test() {
+		assertEquals(Ex1.booleanQ3(true, true), true);
+		assertEquals(Ex1.booleanQ3(true, false), true);
+		assertEquals(Ex1.booleanQ3(false, true), true);
+		assertEquals(Ex1.booleanQ3(false, false), false);
+	}
+	
+	@Test
+	public void booleanQ4Test() {
+		assertEquals(Ex1.booleanQ4(true, true), false);
+		assertEquals(Ex1.booleanQ4(true, false), true);
+		assertEquals(Ex1.booleanQ4(false, true), true);
+		assertEquals(Ex1.booleanQ4(false, false), false);
+	}
+	
 }
