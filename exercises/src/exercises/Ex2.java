@@ -65,7 +65,7 @@ public class Ex2 {
 		}
 	}
 	
-	/* Given an integer n, return a string with n number of 1's
+	/* Given an positive integer n, return a string with n number of 1's
 	 * 
 	 * Input: 4
 	 * Console Output: "1111"
@@ -76,5 +76,20 @@ public class Ex2 {
 			ones = ones + "1";
 		}
 		return ones;
+	}
+	
+	/* Given an array of integers, return true if there is an
+	 * integer in the array that is larger than 10
+	 * 
+	 * Input: {1, -3, 5, -7, 9, -11, 13};
+	 * Console Output: true
+	 * */
+	public static boolean forQ2(int[] strArr) {
+		for (int i = 0; i < strArr.length; i++) {
+			if (strArr[i] > 10) {
+				return true;
+			}
+		}
+		return false;
 	}
 }
