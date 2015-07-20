@@ -1,8 +1,6 @@
 package Tests;
 
 import static org.junit.Assert.*;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import exercises.Ex2;
 
@@ -43,6 +41,14 @@ public class Exercises2Test {
 		assertEquals(Ex2.forQ1(1), "1");
 		assertEquals(Ex2.forQ1(3), "111");
 		assertEquals(Ex2.forQ1(5), "11111");
+	}
+	
+	@Test
+	public void forQ2Test() {
+		assertTrue(Ex2.forQ2(new int[] {1, 2, 3, 11}));
+		assertTrue(Ex2.forQ2(new int[] {100}));
+		assertFalse(Ex2.forQ2(new int[] {}));
+		assertFalse(Ex2.forQ2(new int[] {-100}));
 	}
 	
 }

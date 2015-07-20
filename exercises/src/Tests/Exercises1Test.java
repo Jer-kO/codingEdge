@@ -1,25 +1,13 @@
 package Tests;
 
 import static org.junit.Assert.*;
-
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
-
 import exercises.Ex1;
-
-import java.util.UUID;
-
 
 public class Exercises1Test {
 	
 	Ex1 ex1;
 	
-    @BeforeClass
-    public static void setUpExercises() throws Exception {
-        // Code executed before the first test method
-    }
-
 	@Test
 	public void stringQ1Test() {
 		assertEquals(Ex1.stringQ1("hello", "world"), "hello world");
