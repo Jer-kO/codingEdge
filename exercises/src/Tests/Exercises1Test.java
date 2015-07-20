@@ -61,4 +61,17 @@ public class Exercises1Test {
 		assertEquals(Ex1.booleanQ4(false, false), false);
 	}
 	
+	@Test
+	public void booleanQ5Test() {
+		assertEquals(Ex1.booleanQ5(false, false, false, false, false), false);
+		assertEquals(Ex1.booleanQ5(false ,false, true, false, false), true);
+		assertEquals(Ex1.booleanQ5(false, false, false, false, true), true);
+		assertEquals(Ex1.booleanQ5(false, true, false, false, false), true);
+		assertEquals(Ex1.booleanQ5(false, true, false, false, true), false);
+		assertEquals(Ex1.booleanQ5(false, true, false, false, true), false);
+		assertEquals(Ex1.booleanQ5(false, true, true, false, true), true);
+		assertEquals(Ex1.booleanQ5(true, true, false, true, true), false);
+		assertEquals(Ex1.booleanQ5(true, true, true, true, true), true);
+	}
+	
 }

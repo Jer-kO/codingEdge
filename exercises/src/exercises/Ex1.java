@@ -65,7 +65,17 @@ public class Ex1 {
 	 * Output: true
 	 * */
 	public static boolean booleanQ4(boolean bool1, boolean bool2) {
-		return (bool1 || bool2) && !(bool1 && bool2);
+		return bool1 ^ bool2;
 	}
 	
+	/* Given 5 booleans, return true if and only if there are an odd number 
+		of true values
+	 *
+	 * ex.
+	 * Input: true, false, true, true, false
+	 * Output: true
+	 * */
+	public static boolean booleanQ5(boolean bool1, boolean bool2, boolean bool3, boolean bool4, boolean bool5) {
+		return bool1 ^ bool2 ^ bool3 ^ bool4 ^ bool5;
+	}
 }
