@@ -34,8 +34,6 @@ public class Board {
 	public void clearBoard() {
 		board = new int[this.width][this.height];
 	}
-
-
 	
 	// Returns the row in which it was placed in
 	// Else -1, if the column is full
