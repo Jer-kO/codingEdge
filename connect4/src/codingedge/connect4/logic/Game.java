@@ -51,7 +51,7 @@ public class Game {
 				throw new NotValidPlayerException("Please use a valid int for player (" + PLAYER_ONE_INT + " or " + PLAYER_TWO_INT + ")");		
 			}
 		} else { 
-			throw new GameNotActiveException("Game has not started yet, please start the game.");
+			throw new GameNotActiveException("Game is not started, please start the game.");
 		}
 	}
 	
