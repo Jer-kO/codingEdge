@@ -10,6 +10,12 @@ public class Exercises3Test {
 	Ex3 ex3;
 
 	@Test
+	public void secondStringTest() {
+		assertEquals(Ex3.secondString(new String[] {"abc","def","ghi"}),"def");
+		assertEquals(Ex3.secondString(new String[] {"abc","ghi"}),"ghi");
+	}
+	
+	@Test
 	public void findMaxTest() {
 		assertEquals(Ex3.findMax(new int[] {1, 2, 3, 4}), 4);
 		assertEquals(Ex3.findMax(new int[] {10}), 10);
