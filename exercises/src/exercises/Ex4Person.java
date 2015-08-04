@@ -24,9 +24,9 @@ public class Ex4Person {
 	private static int personCount = 0;
 	private final int id;
 	
-	public final String name;
-	public int likes;
-	public List<Ex4Person> friends;
+	private final String name;
+	private int likes;
+	private List<Ex4Person> friends;
 	
 	// Constructor for a new person given a name
 	public Ex4Person(String name) {
