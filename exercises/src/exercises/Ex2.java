@@ -92,4 +92,76 @@ public class Ex2 {
 		}
 		return false;
 	}
+	
+	/* Given a non-empty array of integers, 
+	 * return the largest integer in the array
+	 * 
+	 * Input: {1, -4, 10, 3, 22, -30}
+	 * Output: 22
+	 * */
+	public static int forQ3(int[] strArr) {
+		int largestSoFar = strArr[0];
+		for (int i = 1; i < strArr.length; i++) {
+			if (strArr[i] > largestSoFar) {
+				largestSoFar = strArr[i];
+			}
+		}
+		return largestSoFar;
+	}
+	
+	/* Given a non-empty 2D array of integers, 
+	 * return the largest integer in the 2D array
+	 * 
+	 * Input: {{3, 1, -5, 10, 23},
+	 *         {1, 44, -2, -6, 4},
+	 *         {-5, -1, 3, 43, 2}}
+	 * Output: 44
+	 * */
+	public static int forQ4(int[][] str2DArr) {
+		int largestSoFar = str2DArr[0][0];
+		for (int i = 0; i < str2DArr.length; i++) {
+			// Note: could also call forQ3 instead
+			for (int j = 0; j < str2DArr[i].length; j++) {
+				if (str2DArr[i][j] > largestSoFar) {
+					largestSoFar = str2DArr[i][j];
+				}
+			}
+		}
+		return largestSoFar;
+	}
+	
+	/* Given a non-empty array of integers,
+	 * return the sum of all the elements
+	 * 
+	 * Input:{1, 2, 3, 4, 5}
+	 * Output: 15
+	 * */
+	public static int forQ5(int[] strArr) {
+		int sum = 0;
+		for (int i = 0; i < strArr.length; i++) {
+			sum += strArr[i];
+		}
+		return sum;
+	}
+	
+	
+	/* Given a non-empty 2D array of integers
+	 * find the row that has the largest sum, and return the sum
+	 * TODO: improve the wording
+	 *  
+	 * Input: {{3, 1, -5, 10, 23},
+	 *         {1, 44, -2, -6, 4},
+	 *         {-5, -1, 3, 43, 2}}
+	 * Output: 42
+	 * */
+	public static int forQ6(int[][] str2DArr) {
+		int largestSum = forQ5(str2DArr[0]);
+		for (int i = 1; i < str2DArr.length; i++) {
+			int rowSum = forQ5(str2DArr[i]);
+			if (rowSum > largestSum) {
+				largestSum = rowSum;
+			}
+		}
+		return largestSum;
+	}
 }

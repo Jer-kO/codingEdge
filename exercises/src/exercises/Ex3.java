@@ -132,7 +132,7 @@ public class Ex3 {
 	 * 
 	 * ex.
 	 * Input: {2, 1, 1, 1, 1, 2, 1}
-	 * Output: true
+	 * Output: 1
 	 * 
 	 * */
 	public static int fourInARow(int[] row) {
