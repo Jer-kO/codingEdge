@@ -124,56 +124,56 @@ public class Task {
 			throw new InvalidDayException();
 		}
 		if (this.dueMonth == "January") {
-        	if (dueDay > 31) {
-	        	throw new InvalidDayException();
-	        }
+			if (dueDay > 31) {
+				throw new InvalidDayException();
+			}
 		} else if (this.dueMonth == "February") {
-        	if (dueDay > 28) {
-	        	throw new InvalidDayException();
-	        }
+			if (dueDay > 28) {
+				throw new InvalidDayException();
+			}
 		} else if (this.dueMonth == "March") {
-	        if (dueDay > 31) {
-	        	throw new InvalidDayException();
-	        }
+			if (dueDay > 31) {
+				throw new InvalidDayException();
+			}
 		} else if (this.dueMonth == "April") {
-        	if (dueDay > 30) {
-	        	throw new InvalidDayException();
-	        }
+			if (dueDay > 30) {
+				throw new InvalidDayException();
+			}
 		} else if (this.dueMonth == "May") {
-        	if (dueDay > 31) {
-	        	throw new InvalidDayException();
-	        }
+			if (dueDay > 31) {
+				throw new InvalidDayException();
+			}
 		} else if (this.dueMonth == "June") {
-        	if (dueDay > 30) {
-	        	throw new InvalidDayException();
-	        }
+			if (dueDay > 30) {
+				throw new InvalidDayException();
+			}
 		} else if (this.dueMonth == "July") {
-        	if (dueDay > 31) {
-	        	throw new InvalidDayException();
-	        }
+			if (dueDay > 31) {
+				throw new InvalidDayException();
+			}
 		} else if (this.dueMonth == "August") {
-        	if (dueDay > 31) {
-	        	throw new InvalidDayException();
-	        }
+			if (dueDay > 31) {
+				throw new InvalidDayException();
+			}
 		} else if (this.dueMonth == "September") {
-        	if (dueDay > 30) {
-	        	throw new InvalidDayException();
-	        }
+			if (dueDay > 30) {
+				throw new InvalidDayException();
+			}
 		} else if (this.dueMonth == "October") {
-        	if (dueDay > 31) {
-	        	throw new InvalidDayException();
-	        }
+			if (dueDay > 31) {
+				throw new InvalidDayException();
+			}
 		} else if (this.dueMonth == "November") {
-        	if (dueDay > 30) {
-	        	throw new InvalidDayException();
-	        }
+			if (dueDay > 30) {
+				throw new InvalidDayException();
+			}
 		} else if (this.dueMonth == "December") {
-        	if (dueDay > 31) {
-	        	throw new InvalidDayException();
-	        }
+			if (dueDay > 31) {
+				throw new InvalidDayException();
+			}
 		}
 		this.dueDay = dueDay;
-	}
+}
 	
 	/* It is easier to work with dueDays when they are represented as integers.
 	 * This will convert the string input from our application to an integer.  If
