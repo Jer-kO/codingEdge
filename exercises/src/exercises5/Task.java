@@ -77,11 +77,11 @@ public class Task {
 	 * For example, this.dueMonth = "January"
 	 * */
 	private void setDueMonth(String dueMonth) throws InvalidMonthException {
-		dueMonth = dueMonth.toLowerCase();
 		this.dueMonth = Task.toMonthStandardFormat(dueMonth);
 	}
 
 	public static String toMonthStandardFormat(String monthToFormat) throws InvalidMonthException {
+		monthToFormat = monthToFormat.toLowerCase();
 		if (monthToFormat.equals("1") || monthToFormat.equals("jan") || monthToFormat.equals("january")) {
 			return "January";
 		} else if (monthToFormat.equals("2") || monthToFormat.equals("feb") || monthToFormat.equals("february")) {
