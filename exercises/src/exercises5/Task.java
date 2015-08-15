@@ -24,8 +24,7 @@ public class Task {
 			throws InvalidPriorityException, InvalidMonthException, InvalidDayException, BlankNameException {
 		this.setName(name);
 		this.setPriority(priority);
-		this.setDueMonth(dueMonth);
-		this.setDueDay(dueDay);
+		this.setDueDate(dueMonth, dueDay);
 	}
 
 	// Methods
@@ -70,33 +69,43 @@ public class Task {
 	}
 
 	// TODO
-	/* Given a string, */
-	public void setDueMonth(String dueMonth) throws InvalidMonthException {
+	/* Given a string, set the due month of the task if the string represents a valid month.
+	 * Examples of valid months may be "1", "january", or "jan".  You should ignore the case
+	 * of the input string.
+	 * 
+	 * When setting the month, the full name of the month should be used starting with a capital.
+	 * For example, this.dueMonth = "January"
+	 * */
+	private void setDueMonth(String dueMonth) throws InvalidMonthException {
 		dueMonth = dueMonth.toLowerCase();
-		if (dueMonth.equals("1") || dueMonth.equals("jan") || dueMonth.equals("january")) {
-			this.dueMonth = "January";
-		} else if (dueMonth.equals("2") || dueMonth.equals("feb") || dueMonth.equals("february")) {
-			this.dueMonth = "February";
-		} else if (dueMonth.equals("3") || dueMonth.equals("mar") || dueMonth.equals("march")) {
-			this.dueMonth = "March";
-		} else if (dueMonth.equals("4") || dueMonth.equals("apr") || dueMonth.equals("april")) {
-			this.dueMonth = "April";
-		} else if (dueMonth.equals("5") || dueMonth.equals("may")) {
-			this.dueMonth = "May";
-		} else if (dueMonth.equals("6") || dueMonth.equals("jun") || dueMonth.equals("june")) {
-			this.dueMonth = "June";
-		} else if (dueMonth.equals("7") || dueMonth.equals("jul") || dueMonth.equals("july")) {
-			this.dueMonth = "July";
-		} else if (dueMonth.equals("8") || dueMonth.equals("aug") || dueMonth.equals("august")) {
-			this.dueMonth = "August";
-		} else if (dueMonth.equals("9") || dueMonth.equals("sep") || dueMonth.equals("september")) {
-			this.dueMonth = "September";
-		} else if (dueMonth.equals("10") || dueMonth.equals("oct") || dueMonth.equals("october")) {
-			this.dueMonth = "October";
-		} else if (dueMonth.equals("11") || dueMonth.equals("nov") || dueMonth.equals("november")) {
-			this.dueMonth = "November";
-		} else if (dueMonth.equals("12") || dueMonth.equals("dec") || dueMonth.equals("december")) {
-			this.dueMonth = "December";
+		this.dueMonth = Task.toMonthStandardFormat(dueMonth);
+	}
+
+	public static String toMonthStandardFormat(String monthToFormat) throws InvalidMonthException {
+		if (monthToFormat.equals("1") || monthToFormat.equals("jan") || monthToFormat.equals("january")) {
+			return "January";
+		} else if (monthToFormat.equals("2") || monthToFormat.equals("feb") || monthToFormat.equals("february")) {
+			return "February";
+		} else if (monthToFormat.equals("3") || monthToFormat.equals("mar") || monthToFormat.equals("march")) {
+			return "March";
+		} else if (monthToFormat.equals("4") || monthToFormat.equals("apr") || monthToFormat.equals("april")) {
+			return "April";
+		} else if (monthToFormat.equals("5") || monthToFormat.equals("may")) {
+			return "May";
+		} else if (monthToFormat.equals("6") || monthToFormat.equals("jun") || monthToFormat.equals("june")) {
+			return "June";
+		} else if (monthToFormat.equals("7") || monthToFormat.equals("jul") || monthToFormat.equals("july")) {
+			return "July";
+		} else if (monthToFormat.equals("8") || monthToFormat.equals("aug") || monthToFormat.equals("august")) {
+			return "August";
+		} else if (monthToFormat.equals("9") || monthToFormat.equals("sep") || monthToFormat.equals("september")) {
+			return "September";
+		} else if (monthToFormat.equals("10") || monthToFormat.equals("oct") || monthToFormat.equals("october")) {
+			return "October";
+		} else if (monthToFormat.equals("11") || monthToFormat.equals("nov") || monthToFormat.equals("november")) {
+			return "November";
+		} else if (monthToFormat.equals("12") || monthToFormat.equals("dec") || monthToFormat.equals("december")) {
+			return "December";
 		} else {
 			throw new InvalidMonthException();
 		}
@@ -107,76 +116,70 @@ public class Task {
 	}
 
 	// TODO
-	public void setDueDay(int dueDay) throws InvalidDayException {
+	/* Given a dueDay represented as an integer, set the due day of this task to this integer.
+	 * We assume that this.dueMonth is already set.
+	 * */
+	private void setDueDay(int dueDay) throws InvalidDayException {
 		if (dueDay < 1) {
 			throw new InvalidDayException();
 		}
-		switch(dueDay) {
-	        case 1:
-	        	if (dueDay > 31) {
-		        	throw new InvalidDayException();
-		        }
-		        break;
-	        case 2: 
-	        	if (dueDay > 28) {
-		        	throw new InvalidDayException();
-		        }
-		        break;
-	        case 3: 
-		        if (dueDay > 31) {
-		        	throw new InvalidDayException();
-		        }
-		        break;
-	        case 4:
-	        	if (dueDay > 30) {
-		        	throw new InvalidDayException();
-		        }
-		        break;
-	        case 5:
-	        	if (dueDay > 31) {
-		        	throw new InvalidDayException();
-		        }
-		        break;
-	        case 6:
-	        	if (dueDay > 30) {
-		        	throw new InvalidDayException();
-		        }
-		        break;
-	        case 7:
-	        	if (dueDay > 31) {
-		        	throw new InvalidDayException();
-		        }
-		        break;
-	        case 8:
-        		if (dueDay > 31) {
-		        	throw new InvalidDayException();
-		        }
-		        break;
-	        case 9: 
-	        	if (dueDay > 30) {
-		        	throw new InvalidDayException();
-		        }
-		        break;
-	        case 10: 
-	        	if (dueDay > 31) {
-		        	throw new InvalidDayException();
-		        }
-		        break;   
-	        case 11:
-	        	if (dueDay > 30) {
-		        	throw new InvalidDayException();
-		        }
-		        break;
-	        case 12: 
-	        	if (dueDay > 31) {
-		        	throw new InvalidDayException();
-		        }
-		        break;
+		if (this.dueMonth == "January") {
+        	if (dueDay > 31) {
+	        	throw new InvalidDayException();
+	        }
+		} else if (this.dueMonth == "February") {
+        	if (dueDay > 28) {
+	        	throw new InvalidDayException();
+	        }
+		} else if (this.dueMonth == "March") {
+	        if (dueDay > 31) {
+	        	throw new InvalidDayException();
+	        }
+		} else if (this.dueMonth == "April") {
+        	if (dueDay > 30) {
+	        	throw new InvalidDayException();
+	        }
+		} else if (this.dueMonth == "May") {
+        	if (dueDay > 31) {
+	        	throw new InvalidDayException();
+	        }
+		} else if (this.dueMonth == "June") {
+        	if (dueDay > 30) {
+	        	throw new InvalidDayException();
+	        }
+		} else if (this.dueMonth == "July") {
+        	if (dueDay > 31) {
+	        	throw new InvalidDayException();
+	        }
+		} else if (this.dueMonth == "August") {
+        	if (dueDay > 31) {
+	        	throw new InvalidDayException();
+	        }
+		} else if (this.dueMonth == "September") {
+        	if (dueDay > 30) {
+	        	throw new InvalidDayException();
+	        }
+		} else if (this.dueMonth == "October") {
+        	if (dueDay > 31) {
+	        	throw new InvalidDayException();
+	        }
+		} else if (this.dueMonth == "November") {
+        	if (dueDay > 30) {
+	        	throw new InvalidDayException();
+	        }
+		} else if (this.dueMonth == "December") {
+        	if (dueDay > 31) {
+	        	throw new InvalidDayException();
+	        }
 		}
 		this.dueDay = dueDay;
 	}
 	
-	public void setDueDay(String dueDay) throws InvalidDayException {
+	/* It is easier to work with dueDays when they are represented as integers.
+	 * This will convert the string input from our application to an integer.  If
+	 * the string we recieve is not a valid number, we throw an InvalidDayException.
+	 * */
+	private void setDueDay(String dueDay) throws InvalidDayException {
 		int dayInt;
 		try {
 			dayInt = Integer.parseInt(dueDay);
@@ -185,4 +188,20 @@ public class Task {
 		}
 		this.setDueDay(dayInt);
 	}
+	
+	/* Given two strings representing the month and day, set the due month and 
+	 * due day of this task.
+	 * 
+	 * The methods setDueMonth and setDueDay throw InvalidMonthException and
+	 * InvalidDayException respectively if their inputs are invalid.
+	 * 
+	 * Note that since determining whether or not the day is valid or invalid is
+	 * dependent on the month, we attempt to set the month first.
+	 * 
+	 * */
+	public void setDueDate(String month, String day) throws InvalidMonthException, InvalidDayException {
+		this.setDueMonth(month);
+		this.setDueDay(day);
+	}
+	
 }

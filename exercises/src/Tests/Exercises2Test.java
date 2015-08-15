@@ -35,6 +35,21 @@ public class Exercises2Test {
 	}
 	
 	@Test
+	public void ifQ4Test() {
+		assertEquals(Ex2.ifQ4(100), "A");
+		assertEquals(Ex2.ifQ4(86), "A");
+		assertEquals(Ex2.ifQ4(85), "B");
+		assertEquals(Ex2.ifQ4(70), "B");
+		assertEquals(Ex2.ifQ4(69), "C");
+		assertEquals(Ex2.ifQ4(60), "C");
+		assertEquals(Ex2.ifQ4(59), "D");
+		assertEquals(Ex2.ifQ4(50), "D");
+		assertEquals(Ex2.ifQ4(49), "F");
+		assertEquals(Ex2.ifQ4(0), "F");
+		
+	}
+	
+	@Test
 	public void forQ1Test() {
 		assertEquals(Ex2.forQ1(-1), "");
 		assertEquals(Ex2.forQ1(0), "");

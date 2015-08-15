@@ -133,7 +133,13 @@ public class TodoBoard {
 		} catch (InvalidMonthException e) {
 			errorMessage = month + " is not a valid month.";
 		} catch (InvalidDayException e) {
-			errorMessage = day + " is not a valid day.";
+			try {
+				errorMessage = day + " is not a valid day in " + Task.toMonthStandardFormat(month) + ".";
+			} catch (InvalidMonthException e2) {
+				// We should not end up here since we InvalidMonthExceptions should have been caught
+				// before throwing an InvalidDayException
+				e2.printStackTrace();
+			}
 		} finally {
 			updateErrorMessage(errorMessage);
 			updateTaskTable();

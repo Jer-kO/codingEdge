@@ -65,6 +65,33 @@ public class Ex2 {
 		}
 	}
 	
+	/* Given an integer grade between 0 and 100, return the
+	 * corresponding letter grade.
+	 * 
+	 * "A" = 86-100
+	 * "B" = 70-85
+	 * "C" = 60-69
+	 * "D" = 50-59
+	 * "F" = 0-49
+	 * 
+	 * Input: 85
+	 * Output: "B"
+	 * 
+	 * */
+	public static String ifQ4(int grade) {
+		String letter = "F";
+		if (grade >= 86 && grade <= 100) {
+			letter = "A";
+		} else if (grade >= 70 && grade <= 85) {
+			letter = "B";
+		} else if (grade >= 60 && grade <= 69) {
+			letter = "C";
+		} else if (grade >= 50 && grade <= 59) {
+			letter = "D";
+		}
+		return letter;
+	}
+	
 	/* Given an positive integer n, return a string with n number of 1's
 	 * 
 	 * Input: 4
