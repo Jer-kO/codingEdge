@@ -25,15 +25,21 @@ public class Exercises5Test {
 	}
 	
 	@Test(expected=InvalidMonthException.class)
-	public void setMonthInvalidTest() throws BlankNameException, InvalidMonthException {
+	public void setMonthInvalidTest() throws BlankNameException, InvalidMonthException, InvalidDayException {
 		Task task = new Task("Test");
-		task.setDueMonth("invalid");
+		task.setDueDate("invalid", "5");
 	}
 	
 	@Test(expected=InvalidDayException.class)
-	public void setDayInvalidTest() throws BlankNameException, InvalidDayException {
+	public void setDayInvalidTest() throws BlankNameException, InvalidDayException, InvalidMonthException {
 		Task task = new Task("Test");
-		task.setDueDay("invalid");
+		task.setDueDate("January", "invalid");
+	}
+	
+	@Test(expected=InvalidMonthException.class)
+	public void shouldThrowInvalidMonthExceptionFirstTest() throws BlankNameException, InvalidDayException, InvalidMonthException {
+		Task task = new Task("Test");
+		task.setDueDate("invalid", "invalid");
 	}
 	
 	@Test(expected=NameNotUniqueException.class)

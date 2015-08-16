@@ -51,6 +51,17 @@ public class Exercises3Test {
 	}
 	
 	@Test
+	public void numTriplesTest() {
+		assertEquals(Ex3.numTriples(""), 0);
+		assertEquals(Ex3.numTriples("a"), 0);
+		assertEquals(Ex3.numTriples("aa"), 0);
+		assertEquals(Ex3.numTriples("aaa"), 1);
+		assertEquals(Ex3.numTriples("aaaxxbbbyyccc"), 3);
+		assertEquals(Ex3.numTriples("aaaa"), 2);
+		assertEquals(Ex3.numTriples("aaaabbbccd"), 3);
+	}
+	
+	@Test
 	public void fourInARowTest() {
 		assertEquals(Ex3.fourInARow(new int[] {1, 1, 1, 1, 2, 1, 1}), 1);
 		assertEquals(Ex3.fourInARow(new int[] {1, 2, 2, 2, 2, 1, 1}), 2);

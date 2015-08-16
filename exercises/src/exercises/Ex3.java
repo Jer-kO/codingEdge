@@ -36,6 +36,8 @@ public class Ex3 {
 			if (ints[i] > max) {
 				max = ints[i];
 			}
+			// You can replace the if statement with the following code
+			// max = Math.max(ints[i], max);
 		}
 		return max;
 	}
@@ -57,6 +59,8 @@ public class Ex3 {
 			if (ints[i] < min) {
 				min = ints[i];
 			}
+			// You can replace the if statement with the following code
+			// min = Math.min(ints[i], min);
 		}
 		return min;
 	}
@@ -103,8 +107,7 @@ public class Ex3 {
 			return ints;
 		}
 
-		int minIndex;
-		int temp;		
+		int minIndex, temp;
 		for (int i = 0; i < ints.length; i++) {
 			// Find the smallest index of the smallest 
 			// int between index i and the end
@@ -121,6 +124,28 @@ public class Ex3 {
 			ints[minIndex] = temp;
 		}
 		return ints;
+	}
+	
+	/* Given a string, return the number of times a character occurs 
+	 * three times in a row.  Triples may overlap, so "aaaa" counts as
+	 * two triples.
+	 * 
+	 * ex.
+	 * Input: "xaaabbby"
+	 * Output: 2
+	 * 
+	 * Input: "aaaa"
+	 * Output: 2
+	 * */
+	public static int numTriples(String str) {
+		int triple = 0;
+		for (int i = 0; i < str.length()-2; i++) {
+			char c = str.charAt(i);
+			if (str.charAt(i+1) == c && str.charAt(i+2) == c) {
+				triple++;
+			}
+		}
+		return triple;
 	}
 	
 	/* Given an array of Integers (either 1 or 2), return 1 if there
