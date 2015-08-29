@@ -48,13 +48,11 @@ public class SwingGame extends Game {
 		this.updateText();
 	}
 	private void initFrame(){
-		// Set up the frame, and layoute
 		JFrame frame = new JFrame("Connect 4");
 		frame.setLayout(new GridBagLayout());
 		GridBagConstraints c = new GridBagConstraints();
 		c.fill = GridBagConstraints.CENTER;
-
-		// New Game button
+		
 		JButton newGameButton = new JButton("New Game");
 		newGameButton.addActionListener(
 			new ActionListener() {
@@ -70,40 +68,35 @@ public class SwingGame extends Game {
 		c.gridwidth = 3;
 		frame.add(newGameButton, c);
 					
-		// label text
 		text = new JLabel("CONNECT 4");
 		c.gridx = 0;
 		c.gridy++; // 2
 		c.gridwidth = 8;
 		frame.add(text,c);
 		
-		// Message text
 		messageText = new JLabel("Click on \"New Game\" to start the game");
 		c.gridy++; // 3
 		frame.add(messageText, c);
+		
+		c.ipadx = 400;
+		c.ipady = 330;
+		c.gridx = 1;
+		c.gridy++; // 4
+		frame.add(boardPanel, c);
 
-		// Buttons
+		frame.setSize(450, 500);
+		frame.setVisible(true);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		c.gridy++;
 		for (int i = 0; i < 7; i++) {
 			final int colNum = i;
 			GridBagConstraints d = new GridBagConstraints();
 			d.fill = GridBagConstraints.CENTER;
 			d.gridx = i + 1;
-			d.ipadx = 2;
+			d.ipadx = 3;
 			JButton button = new ColumnButton(this, colNum);
 			frame.add(button, d);
 		}
-		c.ipadx = 400;
-		c.ipady = 300;
-		c.gridx = 1;
-		c.gridy++;
-		c.gridy++; // 4
-		frame.add(boardPanel, c);
-		
-		// Generic grid properties
-		frame.setSize(450, 500);
-		frame.setVisible(true);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
 	}
 
 	private void updateText() {
