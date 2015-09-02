@@ -1,4 +1,4 @@
-package exercises5;
+package exercises10;
 
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;

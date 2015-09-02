@@ -2,16 +2,17 @@ package Tests;
 
 
 import org.junit.Test;
-import exercises5.BlankNameException;
-import exercises5.InvalidDayException;
-import exercises5.InvalidMonthException;
-import exercises5.InvalidPriorityException;
-import exercises5.NameNotUniqueException;
-import exercises5.Task;
-import exercises5.TodoList;
+
+import exercises10.BlankNameException;
+import exercises10.InvalidDayException;
+import exercises10.InvalidMonthException;
+import exercises10.InvalidPriorityException;
+import exercises10.NameNotUniqueException;
+import exercises10.Task;
+import exercises10.TodoList;
 
 
-public class Exercises5Test {
+public class Ex10TaskTest {
 
 	@Test(expected=BlankNameException.class)
 	public void setNameTest() throws BlankNameException {

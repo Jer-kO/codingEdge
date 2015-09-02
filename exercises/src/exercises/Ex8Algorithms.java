@@ -1,23 +1,8 @@
 package exercises;
 
-public class Ex3 {
-	// Basic functions and algorithms
+public class Ex8Algorithms {
 	
-	public Ex3() {}
-	
-	/* Given an array of strings, return the second string in the array
-	 * You may assume the array has at least 2 strings
-	 * 
-	 * ex.
-	 * Input: {"abc", "def", "ghi"}
-	 * Ouput: "def"
-	 * */
-	public static String secondString(String[] strs) {
-		if (strs.length < 2) {
-			return "";
-		}
-		return strs[1];
-	}
+	public Ex8Algorithms() {}
 	
 	/* Given an array of integers, return the largest integer.
 	 * You can assume the array has at least 1 integer.

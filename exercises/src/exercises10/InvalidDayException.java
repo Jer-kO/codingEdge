@@ -1,4 +1,4 @@
-package exercises5;
+package exercises10;
 
 @SuppressWarnings("serial")
 public class InvalidDayException extends Exception {
