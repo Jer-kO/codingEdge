@@ -36,13 +36,12 @@ public class Ex4Person {
 		this.id = ++personCount;
 	}
 
-	// Name methods
+	// Methods
 	// Note: Since name is 'final,' we do not have a 'setter method'
 	public String getName() {
 		return name;
 	}
-	
-	// Likes methods
+
 	public int getLikes() {
 		return likes;
 	}
@@ -54,8 +53,7 @@ public class Ex4Person {
 	public void addLike() {
 		this.likes++;
 	}
-	
-	// Friends methods
+
 	public List<Ex4Person> getFriends() {
 		return friends;
 	}

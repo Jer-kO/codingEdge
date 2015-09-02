@@ -110,7 +110,7 @@ public class TodoBoard {
 		this.mainFrame.getContentPane().add(input, c);
     }
     
-    // Todo
+    // Student TODO
     /* This method gets called whenever you press the "Add New Task" button.
      * Many exceptions can be thrown when we try to add a task from the user
      * input. These exceptions must be caught here and appropriate error
@@ -129,21 +129,22 @@ public class TodoBoard {
 		} catch (BlankNameException e) {
 			errorMessage = "The task name cannot be blank.";
     	} catch (InvalidPriorityException e) {
-			errorMessage = priority + " is not a valid task priority.";
+			errorMessage = "\"" + priority + "\" is not a valid task priority.";
 		} catch (InvalidMonthException e) {
-			errorMessage = month + " is not a valid month.";
+			errorMessage = "\"" + month + "\" is not a valid month.";
 		} catch (InvalidDayException e) {
-			try {
-				errorMessage = day + " is not a valid day in " + Task.toMonthStandardFormat(month) + ".";
-			} catch (InvalidMonthException e2) {
-				// We should not end up here since we InvalidMonthExceptions should have been caught
-				// before throwing an InvalidDayException
-				e2.printStackTrace();
+			if (e.getMessage() != null) {
+				errorMessage = "\"" + day + "\" is not a valid day in " + e.getMessage() + ".";
+			} else {
+				errorMessage = "\"" + day + "\" is not a valid day.";
 			}
 		} finally {
-			updateErrorMessage(errorMessage);
-			updateTaskTable();
+    		updateErrorMessage(errorMessage);
 		}
+    	if (errorMessage.equals("")) {
+    		updateTaskTable();
+    		clearAddTaskForm();
+    	}
     }
     
     @SuppressWarnings("serial")
@@ -163,6 +164,13 @@ public class TodoBoard {
     	this.errorMsg.setText(msg);
     }
 	
+    private void clearAddTaskForm() {
+    	this.newName.setText("");
+    	this.newPriority.setText("");
+    	this.newMonth.setText("");
+    	this.newDay.setText("");
+    }
+    
     public static void main(String[] args) {
         // Schedule a job for the event-dispatching thread:
         // creating and showing this application's GUI.
