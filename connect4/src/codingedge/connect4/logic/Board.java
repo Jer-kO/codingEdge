@@ -2,19 +2,24 @@ package codingedge.connect4.logic;
 
 public class Board {
 
+	// The default width of a Connect4 board
 	private static int DEFAULT_BOARD_WIDTH = 7;
 
+	// The default height of a Connect4 board
 	private static int DEFAULT_BOARD_HEIGHT = 6;
 	
+	// Private fields that store the width, and height of the board
 	private int width, height;
 	
 	// Board of ints representing the state of the board
 	// 0 signifies no piece is in that cell
 	// 1 signifies player one has a piece in that cell
-	// -1 signifies player two has a piece in that cell
-	// NOTE: we are assuming the players are either -1 or 1
+	// 2 signifies player two has a piece in that cell
+	// NOTE: we are assuming the players are either 1 or 2
 	private int[][] board;
 
+	
+	// STUDENT-TODO
 	// Initialize a default board of size 7x6 with all zeros (empty spaces)
 	public Board() {
 		this.width = DEFAULT_BOARD_WIDTH;
@@ -22,7 +27,8 @@ public class Board {
 
 		board = new int[this.width][this.height];
 	}
-
+	
+	// TODO: maybe remove?
 	// Initialize a board of size width x height with all zeros
 	public Board(int width, int height) {
 		this.width = width;
@@ -30,13 +36,14 @@ public class Board {
 		board = new int[this.width][this.height];
 	}
 
+	// STUDENT-TODO
 	// Clear the board to all zeroes
 	public void clearBoard() {
 		board = new int[this.width][this.height];
 	}
 
-
-	
+	// STUDENT-TODO
+	// Attempt to add a piece in the column,
 	// Returns the row in which it was placed in
 	// Else -1, if the column is full
 	public int addToColumn(int column, int player) throws InvalidColumnException {
@@ -53,55 +60,28 @@ public class Board {
 		return -1;
 	}
 
-	// TODO: Do I want this as an enum? Maybe a game state, enum?
-	// GAME_NOT_OVER, GAME_OVER_BOARD_FULL, GAME_OVER_PLAYER_ONE_WINS,
-	// GAME_OVER_PLAYER_TWO_WINS?
-	// Check if game is over
-	public boolean isGameOver() {
-		// Check if the board is full or if there is a winner
-		return isBoardFull() || (isGameWon() != 0);
-	}
-	
-	// Scans the board from bottom left to top right
-	// Looks for a possible 'winning' pattern
-	// Returns 0 if the board is still playable
-	// Return PLAYER_ONE if player one won
-	// Return PLAYER_TWO if player two won
-	public int isGameWon() {
-		for (int x = 0; x < this.width; x++) {
-			for (int y = 0; y < this.height; y++) {
-				// Check if there's a solution from this tile
-				if (checkForSolutionFromPosition(x, y, board[x][y])) { 
-					return board[x][y]; // Should be either 1 or -1
-				}
-			}
-		}
-		return 0;
-	}
-
+	// STUDENT-TODO
+	// Check if the game is won from position (x,y)
+	// If won, return the number of the player that won (1 or 2)
+	// Else return 0
 	public int isGameWonFromPosition(int x, int y) { 
-		if (checkForSolutionFromPosition(x, y, board[x][y])) { 
+		if (checkForSolutionFromPosition(x, y)) { 
 			return board[x][y];
 		} else { 
 			return 0;
 		}
 	}
 	
-	public int[][] getBoardArray() {
-		return board.clone();
-	}
+	// TODO: can maybe refactor the two methods into each other
 	
-	public int getHeight() {
-		return height;
-	}
-	
-	public int getWidth(){
-		return width;
-	}
-
-	// Return true if there is a set of 4 consecutive pieces from the same player at board[x][y]
-	private boolean checkForSolutionFromPosition(int x, int y, int player) { 
+	// STUDENT-TODO
+	// Check if there is a solution (4 consecutive pieces of the same colour,
+	// in a row, column, or diagonal) that involves the piece at position (x,y)
+	// Return true if a solution exists at that position
+	// Else return false
+	private boolean checkForSolutionFromPosition(int x, int y) { 
 		String s = "";
+		int player = board[x][y];
 		for (int col = 0; col < this.width; col++){
 			s = s.concat(Integer.toString(board[col][y]));
 		}
@@ -153,25 +133,21 @@ public class Board {
 		return false;		
 	}
 	
-	private boolean checkForSolutionFromString(String s, int player){
-		String winner = new String(new char[4]).replace("\0", Integer.toString(player));
-		if (s.contains(winner)) {
-			return true;
+	// STUDENT-TODO
+	// Check if the entire board is full (ie all columns are full)
+	public boolean isBoardFull() {
+		for (int i = 0; i < this.width; i++) {
+			if (isColumnFull(i)) {
+				return true;
+			}
 		}
 		return false;
 	}
 
-	public boolean isBoardFull() {
-		for (int i = 0; i < this.width; i++) {
-			for (int h = this.height; h > 0; h--) {
-				if (board[i][h - 1] == 0) { 
-					return false;
-				}
-			}	
-		}
-		return true;
-	}
-
+	
+	// STUDENT-TODO
+	// Check if the col-th column of the board is full
+	// NOTE: remember to start counting from 0 
 	private boolean isColumnFull(int col) {
 		for (int h = this.height; h > 0; h--) {
 			if (board[col][h - 1] == 0) { 
@@ -181,9 +157,37 @@ public class Board {
 		return true;
 	}
 
+	// Private method that can be used to check if there
+	// are 4 consecutive 'player' ints, in a string
+	// Ex.
+	//    checkForSolutionFromString("12221111", 1)  will return true
+	//    checkForSolutionFromString("12221111", 2)  will return false
+	private boolean checkForSolutionFromString(String s, int player){
+		String winner = new String(new char[4]).replace("\0", Integer.toString(player));
+		if (s.contains(winner)) {
+			return true;
+		}
+		return false;
+	}
+
+	
+	// Simple getters for private fields
+	public int[][] getBoardArray() {
+		return board.clone();
+	}
+	
+	public int getHeight() {
+		return height;
+	}
+	
+	public int getWidth(){
+		return width;
+	}
+
+	
+	// Methods for drawing the board on console
 	public void drawBoard(int playerOne, int playerTwo) {
 		int[][] boardArr = this.getBoardArray();
-
 		drawIntBoard(boardArr, this.getWidth(), this.getHeight(), playerOne, playerTwo);
 	}
 

@@ -14,39 +14,69 @@ import codingedge.connect4.ui.ColumnButton;
 
 public class SwingGame extends Game {
 
-	// Game game;
-	// Board board;
-	// int playerOne, playerTwo;
 	JFrame frame;
 	BoardPanel boardPanel;
 	JLabel text;
 	JLabel messageText;
 
+	// Constructor that initializes the JSwing panel
 	public SwingGame() {
 		super();
-		// Board b = game.getBoard();
 		boardPanel = new BoardPanel(this);
 		initFrame();
 	}
 
+	// Display who's turn it is to move
 	public void showTurnText() {
 		String playerStr = this.getCurrentPlayer() == Game.PLAYER_ONE_INT ? "one"
 				: "two";
 		text.setText("Player " + playerStr + "'s turn to move. ");
 	}
 
+	// Display a message
 	public void showMessage(String s) {
 		messageText.setText(s);
 	}
 
+	// Clear the message
 	public void clearMessage() {
 		messageText.setText("");
 	}
 
+	// Draw the board in the JPanel, and update the text
 	public void drawBoardAndUpdateText() {
 		this.drawBoard();
 		this.updateText();
 	}
+	
+	
+	// Update the text depending on the currentState of the game 
+	private void updateText() {
+		this.clearMessage();
+		if (!this.checkIsGameOver()) {
+			this.showTurnText();
+		} else {
+			this.showGameOver();
+		}
+	}
+
+	// Display the correct text when the game is over
+	private void showGameOver() {
+		switch (currentState) {
+		default:
+		case GAME_OVER_DRAW:
+			text.setText("DRAW");
+			break;
+		case GAME_OVER_ONE:
+			text.setText("PLAYER ONE WINS");
+			break;
+		case GAME_OVER_TWO:
+			text.setText("PLAYER TWO WINS");
+			break;
+		}
+	}
+
+	// Initialize the JFrame, with all the buttons and texts
 	private void initFrame(){
 		JFrame frame = new JFrame("Connect 4");
 		frame.setLayout(new GridBagLayout());
@@ -99,30 +129,6 @@ public class SwingGame extends Game {
 		}
 	}
 
-	private void updateText() {
-		clearMessage();
-		if (!this.checkIsGameOver()) {
-			this.showTurnText();
-		} else {
-			this.showGameOver();
-		}
-	}
-	
-	private void showGameOver() {
-		switch (currentState) {
-		default:
-		case GAME_OVER_DRAW:
-			text.setText("DRAW");
-			break;
-		case GAME_OVER_ONE:
-			text.setText("PLAYER ONE WINS");
-			break;
-		case GAME_OVER_TWO:
-			text.setText("PLAYER TWO WINS");
-			break;
-		}
-	}
-
 	@Override
 	public void drawBoard() {
 		boardPanel.paint(boardPanel.getGraphics());
@@ -130,6 +136,5 @@ public class SwingGame extends Game {
 
 	public static void main(String[] args) {
 		SwingGame game = new SwingGame();
-		//game.startGame();
 	}
 }
