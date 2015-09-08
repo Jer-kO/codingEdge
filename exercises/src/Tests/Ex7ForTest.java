@@ -1,12 +1,8 @@
 package Tests;
 
 import static org.junit.Assert.*;
-
 import org.junit.Test;
-
 import exercises.Ex7For;
-import exercises.Ex6While;
-import exercises.Ex8Algorithms;
 
 
 public class Ex7ForTest {
