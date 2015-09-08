@@ -1,14 +1,10 @@
 package exercises;
 
 public class Ex1Strings {
-	// Questions for primitive types
-	
-	public Ex1Strings() {}
 	
 	/* Given two Strings str1 and str2, return the first string
 	 * followed by the second string, separated by a single space
 	 * 
-	 * ex.
 	 * Input: "Hello", "World"
 	 * Output: "Hello World"
 	 * */
@@ -19,7 +15,6 @@ public class Ex1Strings {
 	/* Given three strings str1, str2, and str3, return a single string
 	 * of the three strings joined in order and separated by a space.
 	 * 
-	 * ex.
 	 * Input: "A", "B", "C"
 	 * Output: "A B C"
 	 * */
@@ -30,7 +25,6 @@ public class Ex1Strings {
 	/* Given a string, return the first character of the string
 	 * You may assume the string has at least 1 character.
 	 * 
-	 * ex.
 	 * Input: "Hello World"
 	 * Output: "ello World"
 	 * */
@@ -41,7 +35,6 @@ public class Ex1Strings {
 	/* Given a string, return the same string except for the first character
 	 * You may assume the string has at least 1 character.
 	 * 
-	 * ex.
 	 * Input: "Hello World"
 	 * Output: "ello World"
 	 * */

@@ -2,12 +2,9 @@ package exercises;
 
 public class Ex3Booleans {
 	
-	public Ex3Booleans() {}
-	
 	/* Given a boolean, return true if the boolean is false, and false
 	 * if the boolean is true
-	 * 
-	 * ex.
+
 	 * Input: true
 	 * Output: false
 	 * */
@@ -17,7 +14,6 @@ public class Ex3Booleans {
 	
 	/* Given two booleans, return true if and only if both are true
 	 * 
-	 * ex.
 	 * Input: true, true
 	 * Output: true
 	 * */
@@ -27,7 +23,6 @@ public class Ex3Booleans {
 	
 	/* Given two booleans, return true if at least 1 is true
 	 * 
-	 * ex.
 	 * Input: true, false
 	 * Output: true
 	 * */
@@ -38,7 +33,6 @@ public class Ex3Booleans {
 	/* Given two booleans, return true if and only if exactly one of them is 
 	 * true
 	 * 
-	 * ex.
 	 * Input: true, false
 	 * Output: true
 	 * */
@@ -49,7 +43,6 @@ public class Ex3Booleans {
 	/* Given 5 booleans, return true if and only if there are an odd number 
 		of true values
 	 *
-	 * ex.
 	 * Input: true, false, true, true, false
 	 * Output: true
 	 * */

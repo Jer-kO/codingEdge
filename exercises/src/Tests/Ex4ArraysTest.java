@@ -32,4 +32,18 @@ public class Ex4ArraysTest {
 		assertEquals(-5, Ex4Arrays.q4_getLastInteger(new int[] {1, 2, 3, 4, -5}));
 	}
 	
+	@Test
+	public void q5_getMiddleIntegerTest() {
+		assertEquals(1, Ex4Arrays.q5_getMiddleInteger(new int[] {1}));
+		assertEquals(-3, Ex4Arrays.q5_getMiddleInteger(new int[] {1, 5, -3, 10, 9}));
+		assertEquals(4, Ex4Arrays.q5_getMiddleInteger(new int[] {1, 2, 3, 4, 5, 6, 7}));
+	}
+	
+	@Test
+	public void q6_swapStartAndEndTest() {
+		assertArrayEquals(new String[] {"a"}, Ex4Arrays.q6_swapStartAndEnd(new String[] {"a"}));
+		assertArrayEquals(new String[] {"b", "a"}, Ex4Arrays.q6_swapStartAndEnd(new String[] {"a", "b"}));
+		assertArrayEquals(new String[] {"e", "b", "c", "d", "a"}, Ex4Arrays.q6_swapStartAndEnd(new String[] {"a", "b", "c", "d", "e"}));
+	}
+	
 }
