@@ -42,7 +42,7 @@ public class Task {
 		return priority;
 	}
 
-	// Student TODO
+	// STUDENT-TODO
 	/*
 	 * Given an integer, set the this tasks priority to this value. If the given
 	 * priority is negative, throw an InvalidPriorityException
@@ -68,7 +68,7 @@ public class Task {
 		return dueMonth;
 	}
 
-	// Student TODO
+	// STUDENT-TODO
 	/*
 	 * Given a string, set the due month of the task if the string represents a
 	 * valid month. Examples of valid months may be "1", "january", or "jan".
@@ -112,7 +112,7 @@ public class Task {
 		return dueDay;
 	}
 
-	// Student TODO
+	// STUDENT-TODO
 	/*
 	 * Given a dueDay represented as an integer, set the due day of this task to
 	 * this integer. We assume that this.dueMonth is already set.

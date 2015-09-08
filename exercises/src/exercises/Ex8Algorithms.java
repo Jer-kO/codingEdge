@@ -2,8 +2,6 @@ package exercises;
 
 public class Ex8Algorithms {
 	
-	public Ex8Algorithms() {}
-	
 	/* Given an array of integers, return the largest integer.
 	 * You can assume the array has at least 1 integer.
 	 * 

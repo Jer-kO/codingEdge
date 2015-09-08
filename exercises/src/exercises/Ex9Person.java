@@ -62,15 +62,8 @@ public class Ex9Person {
 		this.friends = friends;
 	}
 	
-	// Add a friend to this person's list of friends, if he isn't
-	// already a friend. You should also not be able to friend yourself.
-	public void addFriend(Ex9Person friend) {
-		if (!this.friends.contains(friend) && !this.equals(friend)) {
-			this.friends.add(friend);
-		}
-	}
-	
-	// Return true if this person is friends with the given person
+	// STUDENT-TODO
+	// Return true if this person is friends with the given input person
 	public Boolean hasFriend(Ex9Person person) {
 		return this.friends.contains(person);
 		/* Alternative solution
@@ -83,6 +76,17 @@ public class Ex9Person {
 		*/
 	}
 	
+	// STUDENT-TODO
+	// Add a friend to this person's list of friends, if he isn't
+	// already a friend. You should also not be able to friend yourself.
+	public void addFriend(Ex9Person friend) {
+		if (!this.hasFriend(friend) && !this.equals(friend)) {
+			this.friends.add(friend);
+		}
+	}
+	
+	
+	// STUDENT-TODO
 	// Return true if this person has a friend with a given input name
 	public Boolean hasFriendWithName(String friendName) {
 		for (Ex9Person friend: this.friends) {
@@ -93,6 +97,7 @@ public class Ex9Person {
 		return false;
 	}
 	
+	// STUDENT-TODO
 	/* Return all mutual friends
 	 * Mutual friends are people who have each other in their friend's lists
 	 * 

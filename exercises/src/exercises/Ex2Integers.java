@@ -2,11 +2,8 @@ package exercises;
 
 public class Ex2Integers {
 	
-	public Ex2Integers() {}
-	
 	/* Given an int i, return an int that is one larger
 	 * 
-	 * ex.
 	 * Input: 1
 	 * Output: 2
 	 * */
@@ -16,7 +13,6 @@ public class Ex2Integers {
 	
 	/* Given an int i, return an int that is one smaller
 	 * 
-	 * ex.
 	 * Input: 1
 	 * Output: 0
 	 * */
@@ -26,7 +22,6 @@ public class Ex2Integers {
 	
 	/* Given two integers a and b, return a multiplied by b
 	 * 
-	 * ex.
 	 * Input: a = 2, b = 4
 	 * Output: 8
 	 * */
@@ -37,7 +32,6 @@ public class Ex2Integers {
 	/* Given two integers a and b, return the remainder of
 	 * a / b (a divided by b).  Assume b is not zero.
 	 * 
-	 * ex.
 	 * Input: a = 5, b = 2
 	 * Output: 1
 	 * */
@@ -49,7 +43,6 @@ public class Ex2Integers {
 	 * 
 	 * Assume the string is an actual integer.
 	 * 
-	 * ex.
 	 * Input: "123"
 	 * Output: 123
 	 * */

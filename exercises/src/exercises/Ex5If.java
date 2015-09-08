@@ -4,33 +4,44 @@ public class Ex5If {
 	
 	public Ex5If() {}
 	
-	/* Given an integer, return true if it is greater than 0,
-	 * false otherwise
+	/* Given an integer i, return the String "zero" if the integer
+	 * is 0, otherwise return the String "non-zero".
 	 * 
-	 * ex.
 	 * Input: 0
 	 * Output: false
 	 * */
-	public static boolean q1_greaterThan0(int num) {
-		if (num > 0) {
-			return true;
+	public static String q1_isZero(int i) {
+		if (i == 0) {
+			return "zero";
 		}
-		return false;
+		return "non-zero";
 	}
 	
-	/* Given a string and an integer, return the larger number between
-	 * the length of the string and the integer
+	/* Given an integer x, return it absolute value (convert
+	 * negative integers to positive integers by dropping the 
+	 * negative sign).
 	 * 
-	 * ex.
-	 * Input: "Long string", 3
-	 * Output: 11
+	 * Input: -4
+	 * Output: 4
 	 * */
-	public static int q2_stringLengthOrNum(String str, int num) {
-		int strLength = str.length();
-		if (strLength > num) {
-			return strLength;
+	public static int q2_absoluteValue(int x) {
+		if (x > 0) {
+			return x;
 		} else {
-			return num;
+			return -1*x;
+		}
+	}
+	
+	/* Given two integers x and y, return the larger integer.
+	 * 
+	 * Input: x = 3, y = 5
+	 * Output: 5
+	 * */
+	public static int q3_getMax(int x, int y) {
+		if (x > y) {
+			return x;
+		} else {
+			return y;
 		}
 	}
 	
@@ -44,7 +55,7 @@ public class Ex5If {
 	 * Input: 2
 	 * Output: "Tuesday"
 	 * */
-	public static String q3_getDayOfWeek(int day) {
+	public static String q4_getDayOfWeek(int day) {
 		if (day == 1) {
 			return "Monday";
 		} else if (day == 2) {
@@ -75,9 +86,8 @@ public class Ex5If {
 	 * 
 	 * Input: 85
 	 * Output: "B"
-	 * 
 	 * */
-	public static String q4_getLetterGrade(int grade) {
+	public static String q5_getLetterGrade(int grade) {
 		String letter = "F";
 		if (grade >= 86 && grade <= 100) {
 			letter = "A";
