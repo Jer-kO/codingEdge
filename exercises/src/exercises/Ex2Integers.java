@@ -4,14 +4,57 @@ public class Ex2Integers {
 	
 	public Ex2Integers() {}
 	
-	/* Given an int, return an int that is one larger
+	/* Given an int i, return an int that is one larger
 	 * 
 	 * ex.
 	 * Input: 1
 	 * Output: 2
 	 * */
 	public static int q1_addOne(int i) {
-		return i++;
+		return ++i;
+	}
+	
+	/* Given an int i, return an int that is one smaller
+	 * 
+	 * ex.
+	 * Input: 1
+	 * Output: 0
+	 * */
+	public static int q2_minusOne(int i) {
+		return --i;
+	}
+	
+	/* Given two integers a and b, return a multiplied by b
+	 * 
+	 * ex.
+	 * Input: a = 2, b = 4
+	 * Output: 8
+	 * */
+	public static int q3_product(int a, int b) {
+		return a*b;
+	}
+
+	/* Given two integers a and b, return the remainder of
+	 * a / b (a divided by b).  Assume b is not zero.
+	 * 
+	 * ex.
+	 * Input: a = 5, b = 2
+	 * Output: 1
+	 * */
+	public static int q4_remainder(int a, int b) {
+		return a % b;
+	}
+	
+	/* Given a string of numbers, convert it into an int
+	 * 
+	 * Assume the string is an actual integer.
+	 * 
+	 * ex.
+	 * Input: "123"
+	 * Output: 123
+	 * */
+	public static int q5_stringToInt(String numStr) {
+		return Integer.parseInt(numStr);
 	}
 	
 }

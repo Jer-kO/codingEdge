@@ -7,7 +7,7 @@ public class Ex6For {
 	/* Given an positive integer n, return a string with n number of 1's
 	 * 
 	 * Input: 4
-	 * Console Output: "1111"
+	 * Output: "1111"
 	 * */
 	public static String q1_numberOfOnes(int n) {
 		String ones = "";
