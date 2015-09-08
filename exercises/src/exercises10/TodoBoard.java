@@ -5,6 +5,7 @@ import java.awt.GridBagLayout;
 import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -40,9 +41,10 @@ public class TodoBoard {
 	    this.mainFrame = new JFrame("My Todo List");
 	    this.mainFrame.setSize(500, 700);
 	    this.mainFrame.setLayout(new GridBagLayout());
+	    this.mainFrame.setResizable(false);
 		GridBagConstraints c = new GridBagConstraints();
 		
-        // Table
+        // Task Table
 		this.taskTable = new JTable(new String[0][0], this.columnNames);
 		JScrollPane scrollPane = new JScrollPane(this.taskTable);
 		c.fill = GridBagConstraints.HORIZONTAL;
@@ -62,7 +64,7 @@ public class TodoBoard {
 						}
 				}
 			);
-        c.insets = new Insets(10,0,10,0); // padding top left right botton
+        c.insets = new Insets(10,0,10,0); // padding top left botton right 
 		c.gridwidth = 3;
 		c.gridx = 0;
 		c.gridy = 1;
@@ -88,6 +90,7 @@ public class TodoBoard {
 		c.weighty = 0;
 		c.gridx = 0;
 		c.gridy = 6;
+		this.errorMsg.setText(" ");
 		this.mainFrame.getContentPane().add(this.errorMsg, c);
         
 		this.mainFrame.setVisible(true);
@@ -96,21 +99,21 @@ public class TodoBoard {
     private void addInputField(JLabel label, JTextField input, int row) {
     	GridBagConstraints c = new GridBagConstraints();
         c.fill = GridBagConstraints.HORIZONTAL;
-        c.insets = new Insets(5,5,5,5); // padding top left right botton
+        c.insets = new Insets(5,5,5,5); // padding top left botton right
 		c.gridwidth = 1;
 		c.gridx = 0;
 		c.gridy = row;
 		this.mainFrame.getContentPane().add(label, c);
 		
         c.fill = GridBagConstraints.HORIZONTAL;
-        c.insets = new Insets(5,5,5,5); // padding top left right botton
+        c.insets = new Insets(5,5,5,5); // padding top left botton right
 		c.gridwidth = 2;
 		c.gridx = 1;
 		c.gridy = row;
 		this.mainFrame.getContentPane().add(input, c);
     }
     
-    // Student TODO
+    // STUDENT-TODO
     /* This method gets called whenever you press the "Add New Task" button.
      * Many exceptions can be thrown when we try to add a task from the user
      * input. These exceptions must be caught here and appropriate error
@@ -121,11 +124,12 @@ public class TodoBoard {
     	String priority = this.newPriority.getText();
     	String month = this.newMonth.getText();
     	String day = this.newDay.getText();
-    	String errorMessage = "";
+    	// Use " " rather than "" so that an empty messages take up height
+    	String errorMessage = " ";
     	try {
 			this.todoList.addTask(name, priority, month, day);
 		} catch (NameNotUniqueException e) {
-			errorMessage = "The name " + name + " is not unique.";
+			errorMessage = "The task name \"" + name + "\" is not unique.";
 		} catch (BlankNameException e) {
 			errorMessage = "The task name cannot be blank.";
     	} catch (InvalidPriorityException e) {
@@ -141,7 +145,7 @@ public class TodoBoard {
 		} finally {
     		updateErrorMessage(errorMessage);
 		}
-    	if (errorMessage.equals("")) {
+    	if (errorMessage.equals(" ")) {
     		updateTaskTable();
     		clearAddTaskForm();
     	}
