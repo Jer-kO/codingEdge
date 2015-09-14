@@ -1,6 +1,9 @@
 package exercises;
 
 public class Ex1Strings {
+	// TODO: Maybe add some really basic string manipulation,
+	// like checking if the string is empty?
+	
 	
 	/* Given two Strings str1 and str2, return the first string
 	 * followed by the second string, separated by a single space
@@ -26,7 +29,7 @@ public class Ex1Strings {
 	 * You may assume the string has at least 1 character.
 	 * 
 	 * Input: "Hello World"
-	 * Output: "ello World"
+	 * Output: "H"
 	 * */
 	public static String q3_getFirstChar(String str1) {
 		return str1.substring(0, 1);

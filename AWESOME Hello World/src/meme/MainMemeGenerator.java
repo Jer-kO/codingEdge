@@ -30,45 +30,58 @@ import javax.swing.SwingConstants;
 public class MainMemeGenerator {
 
 	// Relative path name of the jpg file from the home directory
-	private final static String fileName = "pictures/not_sure_if.jpg";
+	private final static String FILE_NAME = "pictures/not_sure_if.jpg";
 
 	// The text at the top of the image
-	private final static String topText = "NOT SURE IF STUPID";
+	private final static String TOP_TEXT = "NOT SURE IF STUPID";
 
 	// The text at the bottom of the image
-	private final static String bottomText = "OR JUST DUMB";
+	private final static String BOTTOM_TEXT = "OR JUST DUMB";
 
 	// Main method
 	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable()
-		{
-			public void run(){
+		// Invoke a Runnable object, with the image and texts
+		// This part can be pretty confusing, so there's no need for you to understand it all
+		EventQueue.invokeLater(new Runnable() {
+			
+			// Initialize an ImageFrame, and set it as the contentpane for the JFrame
+			public void run() {
 				JFrame frame = new JFrame();
-				ImageFrame iFrame = new ImageFrame(fileName, topText, bottomText);
-				frame.setSize((int) (iFrame.getWidth() + 20), (int) (iFrame.getHeight() + 40));
-				System.out.println("Width:" + iFrame.getWidth() + ", Height:" + iFrame.getHeight());
-				
+				ImageFrame iFrame = new ImageFrame(FILE_NAME, TOP_TEXT, BOTTOM_TEXT);
+				frame.setSize((int) (iFrame.getWidth()), (int) (iFrame.getHeight()));
 				frame.setContentPane(iFrame);
 				frame.setVisible(true);
-				frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 				frame.setResizable(false);
+				frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			}
-		}
-				);
+		}		);
 	}
 }
 
 // Inner class ImageFrame
 class ImageFrame extends JLayeredPane{
 
+	// Basic Constructor
 	public ImageFrame(String s){
 		ImageComponent component = new ImageComponent(s);
 		add(component);
 	}
 
-	public ImageFrame(String s, String t, String b){
+	// Another Constructor (with 3 parameters)
+	// fileName: the path name for the image file
+	// topText: the text at the top of the meme
+	// bottomText: the text at the top of the meme
+	public ImageFrame(String fileName, String topText, String bottomText){
 		setLayout(new OverlayLayout(this));
-
+		
+		// Add the meme image to the frame
+		ImageComponent component = new ImageComponent(fileName);
+		int width = component.getWidth();
+		int height = component.getHeight();
+		setSize(width, height);
+		add(component, new Integer(0));
+		
+		// Add the text to the frame
 		JPanel pane = new JPanel(new GridBagLayout());
 		GridBagConstraints c = new GridBagConstraints();
 		c.fill = GridBagConstraints.CENTER;
@@ -79,7 +92,7 @@ class ImageFrame extends JLayeredPane{
 		c.insets = new Insets(0,0,123,0);
 		c.gridx = 1;
 		c.gridy = 0;
-		JLabel topLabel = new JLabel(t);
+		JLabel topLabel = new JLabel(topText);
 		topLabel.setFont(new Font("Impact", Font.BOLD, 48));
 		topLabel.setForeground(Color.WHITE);
 		pane.add(topLabel, c);
@@ -87,24 +100,17 @@ class ImageFrame extends JLayeredPane{
 		c.gridx = 1;
 		c.gridy = 2;
 		c.insets = new Insets(123,0,0,0);
-		JLabel bottomLabel = new JLabel(b);
+		JLabel bottomLabel = new JLabel(bottomText);
 		bottomLabel.setFont(new Font("Impact", Font.BOLD, 48));
 		bottomLabel.setForeground(Color.WHITE);
 		pane.add(bottomLabel, c);
+		
 		pane.setOpaque(false);
-		
-		ImageComponent component = new ImageComponent(s);
-		int width = component.getWidth();
-		int height = component.getHeight();
-		setSize(width, height);
-
 		add(pane, new Integer(1));
-		
-		add(component, new Integer(0));
 	}
 }		
 
-// Inner class ImageComponent
+// Inner class ImageComponent to display the image
 class ImageComponent extends JComponent {
 	private Image meme;
 	
