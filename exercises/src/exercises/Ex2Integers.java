@@ -26,7 +26,7 @@ public class Ex2Integers {
 	 * Output: 8
 	 * */
 	public static int q3_product(int a, int b) {
-		return a*b;
+		return a * b;
 	}
 
 	/* Given two integers a and b, return the remainder of
@@ -38,7 +38,7 @@ public class Ex2Integers {
 	public static int q4_remainder(int a, int b) {
 		return a % b;
 	}
-	
+
 	/* Given a string of numbers, convert it into an int
 	 * 
 	 * Assume the string is an actual integer.
@@ -48,6 +48,13 @@ public class Ex2Integers {
 	 * */
 	public static int q5_stringToInt(String numStr) {
 		return Integer.parseInt(numStr);
+	}
+	
+	/* Given two strings, return the total length of the strings (as an int)
+	 * 
+	 * */
+	public static int q6_totalStringsLength(String str1, String str2) {
+		return str1.length() + str2.length();
 	}
 	
 }

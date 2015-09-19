@@ -9,6 +9,7 @@ public class Ex4Arrays {
 	 * Output: "def"
 	 * */
 	public static String q1_firstString(String[] strs) {
+		// TODO: remove? since students wont know what ifs are
 		if (strs.length < 1) {
 			return "";
 		}
@@ -22,6 +23,7 @@ public class Ex4Arrays {
 	 * Output: "def"
 	 * */
 	public static String q2_secondString(String[] strs) {
+		// TODO: remove? since students wont know what ifs are
 		if (strs.length < 2) {
 			return "";
 		}
@@ -68,8 +70,8 @@ public class Ex4Arrays {
 	}
 	
 	
-	/* Given an array of strings, return a new with the first string and
-	 * last string swapped. 
+	/* Given an array of strings, return a new array with 
+	 * the first string and last string swapped. 
 	 * You may assume there is at least 1 string in the array.
 	 * 
 	 * Input: {"a", "b", "c", "d", "e"}

@@ -36,11 +36,19 @@ public class Ex6WhileTest {
 	}
 	
 	@Test
-	public void q5_sumUntilThresholdTest(){
-		assertEquals(0, Ex6While.q5_sumUntilThreshold(new int[] {0, 0, 0, 0, 0}, 1));
-		assertEquals(0, Ex6While.q5_sumUntilThreshold(new int[] {0, 1, 2, 3, 4}, 100));
-		assertEquals(5, Ex6While.q5_sumUntilThreshold(new int[] {0, 1, 2, 3, 4}, 10));
-		assertEquals(3, Ex6While.q5_sumUntilThreshold(new int[] {1, 3, 5, 2, 10}, 9));
+	public void q5_totalSumIntArrayTest() {
+		assertEquals(0, Ex6While.q5_totalSumIntArray(new int[] {}));
+		assertEquals(0, Ex6While.q5_totalSumIntArray(new int[] {0}));
+		assertEquals(6, Ex6While.q5_totalSumIntArray(new int[] {1, 2, 3}));
+		assertEquals(6, Ex6While.q5_totalSumIntArray(new int[] {1, 2, 3, -3, -2, -1, 6}));
+	}
+	
+	@Test
+	public void q6_sumUntilThresholdTest(){
+		assertEquals(0, Ex6While.q6_sumUntilThreshold(new int[] {0, 0, 0, 0, 0}, 1));
+		assertEquals(0, Ex6While.q6_sumUntilThreshold(new int[] {0, 1, 2, 3, 4}, 100));
+		assertEquals(5, Ex6While.q6_sumUntilThreshold(new int[] {0, 1, 2, 3, 4}, 10));
+		assertEquals(3, Ex6While.q6_sumUntilThreshold(new int[] {1, 3, 5, 2, 10}, 9));
 	}
 	
 }

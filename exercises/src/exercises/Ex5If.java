@@ -8,7 +8,7 @@ public class Ex5If {
 	 * is 0, otherwise return the String "non-zero".
 	 * 
 	 * Input: 0
-	 * Output: false
+	 * Output: "zero"
 	 * */
 	public static String q1_isZero(int i) {
 		if (i == 0) {

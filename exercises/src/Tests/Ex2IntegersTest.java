@@ -43,4 +43,12 @@ public class Ex2IntegersTest {
 		assertEquals(0, Ex2Integers.q5_stringToInt("0"));
 		assertEquals(-1, Ex2Integers.q5_stringToInt("-1"));
 	}
+	
+	@Test
+	public void q6_totalStringsLengthTest() {
+		assertEquals(0, Ex2Integers.q6_totalStringsLength("", ""));
+		assertEquals(2, Ex2Integers.q6_totalStringsLength("a", "b"));
+		assertEquals(10, Ex2Integers.q6_totalStringsLength("12345678", "hi"));
+		assertEquals(4, Ex2Integers.q6_totalStringsLength("", "abcd"));
+	}
 }

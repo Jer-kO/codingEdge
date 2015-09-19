@@ -69,6 +69,20 @@ public class Ex6While {
 		return startingZeros;
 	}
 	
+	/* Given an array of integers, return the sum of all the integers
+	 * 
+	 * Input: {1, 9, -1, 3, 5, 0}
+	 * Output: 17
+	 * */
+	public static int q5_totalSumIntArray(int[] arr) {
+		int sum = 0;
+		int i = 0;
+		while (i < arr.length) {
+			sum += arr[i];
+			i++;
+		}
+		return sum;
+	}
 	/* Given an array of positive integers, and a threshold max,
 	 * sum the starting values until it reaches the threshold, 
 	 * and return the number of integers summed (0, if the threshold was not reached)
@@ -76,7 +90,7 @@ public class Ex6While {
 	 * Input: {1, 3, 5, 2, 10}, 9
 	 * Ouput: 3 		(first 3 numbers sum to 9, 1 + 3 + 5 = 9)
 	 * */
-	public static int q5_sumUntilThreshold(int[] arr, int max){
+	public static int q6_sumUntilThreshold(int[] arr, int max){
 		int sum = 0;
 		int i = 0;
 		while (sum < max) {
