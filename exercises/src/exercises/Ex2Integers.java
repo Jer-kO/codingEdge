@@ -52,6 +52,8 @@ public class Ex2Integers {
 	
 	/* Given two strings, return the total length of the strings (as an int)
 	 * 
+	 * Input: "Hello", "World"
+	 * Output: 10
 	 * */
 	public static int q6_totalStringsLength(String str1, String str2) {
 		return str1.length() + str2.length();

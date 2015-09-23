@@ -45,6 +45,8 @@ public class Ex5If {
 		}
 	}
 	
+	
+	
 	/* Given an integer between 1 and 7, return the name
 	 * of the corresponding day of the week.  Assume that
 	 * "Monday" is corresponds to the number 1.
@@ -88,17 +90,87 @@ public class Ex5If {
 	 * Output: "B"
 	 * */
 	public static String q5_getLetterGrade(int grade) {
-		String letter = "F";
-		if (grade >= 86 && grade <= 100) {
+		String letter;
+		if (grade >= 86) {
 			letter = "A";
-		} else if (grade >= 70 && grade <= 85) {
+		} else if (grade >= 70) {
 			letter = "B";
-		} else if (grade >= 60 && grade <= 69) {
+		} else if (grade >= 60) {
 			letter = "C";
-		} else if (grade >= 50 && grade <= 59) {
+		} else if (grade >= 50) {
 			letter = "D";
+		} else {
+			letter = "F";
 		}
 		return letter;
 	}
-
+	
+	/* Given an integer, return whether or not the integer
+	 * is positive or negative, and even or odd. If the number 
+	 * is zero, return "zero"
+	 * 
+	 * Input: -251 
+	 * Output: "negative odd"
+	 * */
+	public static String q6_getPosNegOddEven(int n) {
+		if (n == 0) {
+			return "zero";
+		}
+		
+		String str = "";
+		if (n > 0) {
+			str += "positive ";
+		} else {
+			str += "negative ";
+		}
+		
+		if (n % 2 == 0) {
+			str += "even";
+		} else {
+			str += "odd";
+		}
+		
+		return str;
+	}
+	
+	/* Given a students current grade and an integer n representing the change 
+	 * in the students, return the student's new letter grade. When n=1, the student's
+	 * grade goes up by 1. When n=0, the student's grade doesn't change. When n=-1, 
+	 * the student's grade goes down by 1.
+	 * 
+	 * The grades from highest to lowest are "A", "B", "C", "D", "F". Grades cannot
+	 * go lower than "F" or higher than "A".
+	 * 
+	 * Input: "B", 1 
+	 * Output: "A"
+	 * */
+	public static String q7_changeLetterGrade(String currentGrade, int n) {
+		if (n == 0) {
+			return currentGrade;
+		} else if (n > 0) {
+			if (currentGrade == "A") {
+				return "A";
+			} else if (currentGrade == "B") {
+				return "A";
+			} else if (currentGrade == "C") {
+				return "B";
+			} else if (currentGrade == "D") {
+				return "C";
+			} else {
+				return "D";
+			}
+		} else {
+			if (currentGrade == "A") {
+				return "B";
+			} else if (currentGrade == "B") {
+				return "C";
+			} else if (currentGrade == "C") {
+				return "D";
+			} else if (currentGrade == "D") {
+				return "E";
+			} else {
+				return "F";
+			}
+		}
+	}
 }

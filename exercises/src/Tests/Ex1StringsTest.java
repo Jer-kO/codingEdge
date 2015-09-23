@@ -19,14 +19,21 @@ public class Ex1StringsTest {
 	}
 	
 	@Test
-	public void q3_allButFirstCharTest() {
-		assertEquals("h", Ex1Strings.q3_getFirstChar("hello"));
-		assertEquals("a", Ex1Strings.q3_getFirstChar("a"));
+	public void q3_greetNameTest() {
+		assertEquals("Hello ", Ex1Strings.q3_greetName(""));
+		assertEquals("Hello Justin", Ex1Strings.q3_greetName("Justin"));
+		assertEquals("Hello Jeremy", Ex1Strings.q3_greetName("Jeremy"));
 	}
 	
 	@Test
 	public void q4_allButFirstCharTest() {
-		assertEquals("ello", Ex1Strings.q4_allButFirstChar("hello"));
+		assertEquals("h", Ex1Strings.q4_getFirstChar("hello"));
+		assertEquals("a", Ex1Strings.q4_getFirstChar("a"));
+	}
+	
+	@Test
+	public void q5_allButFirstCharTest() {
+		assertEquals("ello", Ex1Strings.q5_allButFirstChar("hello"));
 	}
 	
 }

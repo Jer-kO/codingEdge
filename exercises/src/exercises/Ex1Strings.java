@@ -21,13 +21,23 @@ public class Ex1Strings {
 		return str1 + " " + str2 + " " + str3;
 	}
 	
+	/* Given a name (a string), return the name with
+	 * the greeting "Hello" prepended to it.
+	 * 
+	 * Input: "Justin"
+	 * Output: "Hello Justin"
+	 * */
+	public static String q3_greetName(String name) {
+		return "Hello " + name;
+	}
+	
 	/* Given a string, return the first character of the string
 	 * You may assume the string has at least 1 character.
 	 * 
 	 * Input: "Hello World"
 	 * Output: "H"
 	 * */
-	public static String q3_getFirstChar(String str1) {
+	public static String q4_getFirstChar(String str1) {
 		return str1.substring(0, 1);
 	}
 	
@@ -37,7 +47,7 @@ public class Ex1Strings {
 	 * Input: "Hello World"
 	 * Output: "ello World"
 	 * */
-	public static String q4_allButFirstChar(String str1) {
+	public static String q5_allButFirstChar(String str1) {
 		return str1.substring(1, str1.length());
 	}
 }

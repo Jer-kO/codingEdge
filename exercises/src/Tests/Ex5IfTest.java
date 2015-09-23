@@ -57,4 +57,33 @@ public class Ex5IfTest {
 		
 	}
 	
+	@Test
+	public void q6_getPosNegOddEvenTest() {
+		assertEquals("zero", Ex5If.q6_getPosNegOddEven(0));
+		assertEquals("positive odd", Ex5If.q6_getPosNegOddEven(1));
+		assertEquals("positive even", Ex5If.q6_getPosNegOddEven(2));
+		assertEquals("negative odd", Ex5If.q6_getPosNegOddEven(-1));
+		assertEquals("negative even", Ex5If.q6_getPosNegOddEven(-2));
+	}
+	
+	@Test
+	public void q7_changeLetterGradeTest() {
+		assertEquals("A", Ex5If.q7_changeLetterGrade("A", 0));
+		assertEquals("B", Ex5If.q7_changeLetterGrade("B", 0));
+		assertEquals("C", Ex5If.q7_changeLetterGrade("C", 0));
+		assertEquals("D", Ex5If.q7_changeLetterGrade("D", 0));
+		assertEquals("F", Ex5If.q7_changeLetterGrade("F", 0));
+		
+		assertEquals("A", Ex5If.q7_changeLetterGrade("A", 1));
+		assertEquals("A", Ex5If.q7_changeLetterGrade("B", 1));
+		assertEquals("B", Ex5If.q7_changeLetterGrade("C", 1));
+		assertEquals("C", Ex5If.q7_changeLetterGrade("D", 1));
+		assertEquals("D", Ex5If.q7_changeLetterGrade("F", 1));
+		
+		assertEquals("B", Ex5If.q7_changeLetterGrade("A", -1));
+		assertEquals("C", Ex5If.q7_changeLetterGrade("B", -1));
+		assertEquals("D", Ex5If.q7_changeLetterGrade("C", -1));
+		assertEquals("E", Ex5If.q7_changeLetterGrade("D", -1));
+		assertEquals("F", Ex5If.q7_changeLetterGrade("F", -1));
+	}
 }
