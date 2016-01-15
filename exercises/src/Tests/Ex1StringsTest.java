@@ -34,6 +34,14 @@ public class Ex1StringsTest {
 	@Test
 	public void q5_allButFirstCharTest() {
 		assertEquals("ello", Ex1Strings.q5_allButFirstChar("hello"));
+		assertEquals("ello world", Ex1Strings.q5_allButFirstChar("hello world"));
+		assertEquals("", Ex1Strings.q5_allButFirstChar("a"));
+	}
+	
+	@Test
+	public void q6_getLastCharTest() {
+		assertEquals("d", Ex1Strings.q6_getLastChar("hello world"));
+		assertEquals("a", Ex1Strings.q6_getLastChar("a"));
 	}
 	
 }

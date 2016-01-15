@@ -100,7 +100,6 @@ public class Ex7For {
 	
 	/* Given a non-empty 2D array of integers
 	 * find the row that has the largest sum, and return the sum
-	 * TODO: improve the wording
 	 *  
 	 * Input: {{3, 1, -5, 10, 23},
 	 *         {1, 44, -2, -6, 4},

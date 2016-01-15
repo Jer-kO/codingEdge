@@ -80,6 +80,6 @@ public class Ex3Booleans {
 	 * */
 	public static boolean q8_evenNumberTrue(boolean bool1, boolean bool2, boolean bool3, boolean bool4, boolean bool5) {
 		return !(bool1 ^ bool2 ^ bool3 ^ bool4 ^ bool5);
-		// can also do !q5_oddNumberTrue(bool1, bool2, bool3, bool4, bool5);
+		// can also do !q7_oddNumberTrue(bool1, bool2, bool3, bool4, bool5);
 	}	
 }

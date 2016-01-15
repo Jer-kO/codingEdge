@@ -2,9 +2,7 @@
 package meme;
 
 // Packages needed for this class
-import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.Dimension;
 import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.Graphics;
@@ -16,15 +14,12 @@ import java.io.File;
 import java.io.IOException;
 
 import javax.imageio.ImageIO;
-import javax.swing.BoxLayout;
-import javax.swing.ImageIcon;
 import javax.swing.JComponent;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JLayeredPane;
 import javax.swing.JPanel;
 import javax.swing.OverlayLayout;
-import javax.swing.SwingConstants;
 
 // Class definition of MainMemeGenerator
 public class MainMemeGenerator {
@@ -54,7 +49,7 @@ public class MainMemeGenerator {
 				frame.setResizable(false);
 				frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			}
-		}		);
+		});
 	}
 }
 

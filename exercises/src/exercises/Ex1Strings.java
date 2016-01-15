@@ -50,4 +50,14 @@ public class Ex1Strings {
 	public static String q5_allButFirstChar(String str1) {
 		return str1.substring(1, str1.length());
 	}
+	
+	/* Given a string, return only the last character of the string.
+	 * You may assume the string has at least 1 character.
+	 * 
+	 * Input: "Hello World"
+	 * Output: "d"
+	 * */
+	public static String q6_getLastChar(String str1) {
+		return str1.substring(str1.length()-1, str1.length());
+	}
 }
