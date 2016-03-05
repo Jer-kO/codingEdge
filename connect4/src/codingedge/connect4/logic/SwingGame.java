@@ -87,7 +87,7 @@ public class SwingGame extends Game {
 		newGameButton.addActionListener(
 			new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
-						startGame();
+						initGame();
 						drawBoardAndUpdateText();
 					}
 			}
@@ -135,6 +135,6 @@ public class SwingGame extends Game {
 	}
 
 	public static void main(String[] args) {
-		SwingGame game = new SwingGame();
+		new SwingGame();
 	}
 }

@@ -1,29 +1,18 @@
 package codingedge.connect4.ui;
 
 import java.awt.Color;
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
-import java.awt.GridLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.util.Scanner;
 
-import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import codingedge.connect4.logic.Board;
 import codingedge.connect4.logic.Game;
-import codingedge.connect4.logic.GameNotActiveException;
-import codingedge.connect4.logic.InvalidColumnException;
-import codingedge.connect4.logic.InvalidMoveException;
-import codingedge.connect4.logic.NotValidPlayerException;
 
 public class BoardPanel extends JPanel {
-
+	private static final long serialVersionUID = 1L;
+	
 	Game game;
 	Board board;
 	int playerOne, playerTwo;
@@ -40,8 +29,8 @@ public class BoardPanel extends JPanel {
 	public BoardPanel(Game g) {
 		this.game = g;
 		this.board = g.getBoard();
-		this.playerOne = g.getPlayerOneInt();
-		this.playerTwo = g.getPlayerTwoInt();
+		this.playerOne = Game.PLAYER_ONE_INT;
+		this.playerTwo = Game.PLAYER_TWO_INT;
 	}
 
 	@Override

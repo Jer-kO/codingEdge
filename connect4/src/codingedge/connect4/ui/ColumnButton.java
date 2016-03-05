@@ -5,14 +5,13 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 
-import codingedge.connect4.logic.Game;
 import codingedge.connect4.logic.GameNotActiveException;
 import codingedge.connect4.logic.InvalidColumnException;
 import codingedge.connect4.logic.InvalidMoveException;
-import codingedge.connect4.logic.NotValidPlayerException;
 import codingedge.connect4.logic.SwingGame;
 
 public class ColumnButton extends JButton implements ActionListener {
+	private static final long serialVersionUID = 1L;
 
 	int columnNumber;
 
@@ -32,7 +31,7 @@ public class ColumnButton extends JButton implements ActionListener {
 					game.makeNextMove(columnNumber);
 					game.drawBoardAndUpdateText();
 				} catch (InvalidMoveException | GameNotActiveException
-						| NotValidPlayerException | InvalidColumnException ex) {
+						 | InvalidColumnException ex) {
 					game.showMessage(ex.getMessage());
 				}
 			}

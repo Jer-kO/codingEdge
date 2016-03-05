@@ -137,11 +137,11 @@ public class Board {
 	// Check if the entire board is full (ie all columns are full)
 	public boolean isBoardFull() {
 		for (int i = 0; i < this.width; i++) {
-			if (isColumnFull(i)) {
-				return true;
+			if (!isColumnFull(i)) {
+				return false;
 			}
 		}
-		return false;
+		return true;
 	}
 
 	
